@@ -1,0 +1,163 @@
+/* =====================================================================
+   TUTORIALES.CSS — solo lo propio de tutoriales.html
+   El reset, el header y el footer están en base.css
+   Orden de carga: fonts.css → base.css → tutoriales.css
+   ===================================================================== */
+
+.tutoriales {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto 56px;
+}
+
+
+/* ===== INTRODUCCIÓN ===== */
+
+.intro {
+  margin-bottom: 36px;
+  padding: 0 5% 24px;
+  text-align: center;
+  border-bottom: 1px solid #dcdcd4;
+}
+
+.intro p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: #6b6b66;
+}
+
+.intro strong {
+  font-style: normal;
+  font-weight: 700;
+  color: #2f4a2b;
+}
+
+
+/* ===== MÉTODOS (2 por fila) ===== */
+
+.metodos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.metodo {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  background-color: #1b2b19;
+  overflow: hidden;
+  color: #fff;
+}
+
+.metodo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+/* Capa oscura para que se lea el texto */
+.metodo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 43, 25, .45);
+  transition: background-color .3s;
+}
+
+/* Texto centrado, por encima de la capa oscura */
+.metodo .texto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.texto h3 {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .5);
+  transition: color .3s;
+}
+
+.texto span {
+  margin-top: 8px;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* Hover: el texto no cambia, solo el título */
+.metodo:hover {
+  color: #fff;
+}
+
+.metodo:active {
+  color: #f7f5ee;
+}
+
+.metodo:hover h3 {
+  color: #c9a24b;
+}
+
+.metodo:hover::after {
+  background-color: rgba(27, 43, 25, .2);
+}
+
+.metodo:hover img {
+  transform: scale(1.06);
+}
+
+.metodo:focus-visible {
+  outline: 3px solid #c9a24b;
+  outline-offset: 3px;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet horizontal */
+@media (max-width: 1080px) {
+  .metodos { gap: 20px; }
+  .texto h3 { font-size: 1.5rem; }
+}
+
+/* Tablet vertical */
+@media (max-width: 768px) {
+  .texto h3 { font-size: 1.2rem; }
+  .texto span { font-size: .75rem; }
+}
+
+/* Mobile 1 */
+@media (max-width: 480px) {
+  .tutoriales { margin: 28px auto 40px; }
+  .metodos { grid-template-columns: 1fr; }
+  .texto h3 { font-size: 1.6rem; }
+  .texto span { font-size: .85rem; }
+}
+
+/* Mobile 2 */
+@media (max-width: 375px) {
+  .intro { padding: 0 0 20px; }
+  .intro p { font-size: .9rem; }
+}

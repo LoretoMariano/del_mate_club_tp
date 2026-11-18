@@ -1,0 +1,74 @@
+/* =====================================================================
+   franquicias.html — Franquicias (botón de WhatsApp)
+   El header, el nav y el footer están en base.css
+   ===================================================================== */
+
+:root {
+  --dorado: #c9a24b;
+  --verde-oscuro: #1b2b19;
+  --crema: #f7f5ee;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   Página: Franquicias
+   ========================================================== */
+.contenedor--franquicias {
+  max-width: 1200px;
+  padding: 36px 20px 60px;
+  text-align: center;
+}
+
+.contenedor--franquicias .subtitulo {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 12px;
+}
+
+.contenedor--franquicias .titulo {
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: 38px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #222;
+  margin-bottom: 28px;
+}
+
+/* Línea corta debajo del título */
+.contenedor--franquicias .titulo::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: var(--dorado);
+  margin: 28px auto 0;
+}
+
+.contenedor--franquicias .texto {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  font-size: 13px;
+  line-height: 22px;
+  color: #666;
+}
+
+/* Botón WhatsApp */
+.WhatsApp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  background-color: #6dab3c;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.WhatsApp:hover,
+.WhatsApp:active { background-color: #568c2a; color: #fff; }

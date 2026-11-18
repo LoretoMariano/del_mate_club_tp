@@ -1,0 +1,359 @@
+/* =====================================================================
+   El reset, el header y el footer están en base.css
+   Orden de carga: fonts.css → base.css → menu.css
+   ===================================================================== */
+
+
+/* Foco con teclado del botón "Ingresar" */
+.btn:focus-visible {
+  outline: 3px solid #c9a24b;
+  outline-offset: 3px;
+}
+
+/* Recuadro de imagen con trama */
+.ph {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 12px, transparent 12px 24px),
+    #5a3a22;
+}
+
+.ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ===== PORTADA ===== */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  overflow: hidden;
+  background-color: #1b2b19;
+  color: #fff;
+}
+
+.hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Degradé verde sobre la foto para que el texto se lea */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(27, 43, 25, .75) 0%, rgba(27, 43, 25, 0) 65%);
+  z-index: 1;
+}
+
+.hero__texto {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero__texto h1,
+.hero__texto p {
+  max-width: 420px;
+}
+
+.hero__texto h1 {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  line-height: 1;
+}
+
+.hero__texto p {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.hero .liviano {
+  display: block;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.hero .fuerte {
+  display: block;
+  font-weight: 700;
+  font-size: 4.6rem;
+}
+
+
+/* ===== CATEGORÍAS ===== */
+
+.categorias {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1100px;
+  margin: 32px auto;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 30px;
+}
+
+.card {
+  position: relative;
+  display: block;
+  color: #fff;
+  overflow: hidden;
+}
+
+.card:hover,
+.card:active {
+  color: #fff;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .4s;
+}
+
+.card:hover img {
+  transform: scale(1.06);
+}
+
+.card--ancha img,
+.card--ancha .ph {
+  aspect-ratio: 16 / 9;
+}
+
+.card--grande img,
+.card--grande .ph {
+  aspect-ratio: 721 / 660;
+}
+
+.card__label {
+  position: absolute;
+  left: 28px;
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.card__label small {
+  padding: 4px 9px;
+  background-color: #f7f5ee;
+  color: #1d1d1b;
+  font-size: .8rem;
+  transition: background-color .25s, color .25s;
+}
+
+.card__label strong {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .45);
+  transition: color .25s;
+}
+
+.card:hover small {
+  background-color: #c9a24b;
+}
+
+.card:hover strong {
+  color: #c9a24b;
+}
+
+.card:active strong {
+  color: #f7f5ee;
+}
+
+
+/* ===== SOMOS FAMILIA ===== */
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 667px;
+  margin: 48px auto;
+  padding: 24px;
+  background-color: #dcdcd4;
+}
+
+.opciones h2 {
+  margin-bottom: 20px;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1b2b19;
+}
+
+
+/* ===== TIENDA CERCA TUYO ===== */
+
+.cerca {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  text-align: center;
+  color: #fff;
+}
+
+.cerca .ph {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #1b2b19;
+}
+
+.cerca::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .45);
+}
+
+.cerca__texto {
+  position: relative;
+  z-index: 1;
+  padding: 24px;
+}
+
+.cerca h2 {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  line-height: 1.05;
+}
+
+.cerca .liviano {
+  display: block;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+.cerca .fuerte {
+  display: block;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #c9a24b;
+}
+
+.cerca__texto p {
+  margin: 10px 0 18px;
+  font-size: .9rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 26px;
+  border: 1px solid #fff;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: .85rem;
+  text-transform: uppercase;
+  color: #fff;
+  transition: background-color .25s, color .25s, border-color .25s;
+}
+
+.btn:hover {
+  background-color: #c9a24b;
+  border-color: #c9a24b;
+  color: #1b2b19;
+}
+
+.btn:active {
+  background-color: #1b2b19;
+  border-color: #1b2b19;
+  color: #fff;
+}
+
+
+/* ===== RESPONSIVE (solo lo de esta página) ===== */
+
+/* Tablet horizontal */
+@media (max-width: 1080px) {
+  .hero { min-height: 480px; }
+  .hero .liviano { font-size: 2.6rem; }
+  .hero .fuerte { font-size: 4rem; }
+
+  .categorias,
+  .col { gap: 20px; }
+
+  .card__label strong { font-size: 2.2rem; }
+}
+
+/* Tablet vertical */
+@media (max-width: 768px) {
+  .hero { min-height: 420px; }
+  .hero::after { background: linear-gradient(180deg, rgba(27, 43, 25, .7) 0%, rgba(27, 43, 25, .1) 100%); }
+  .hero .liviano { font-size: 2.2rem; }
+  .hero .fuerte { font-size: 3.4rem; }
+
+  .categorias {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .cerca { min-height: 340px; }
+  .cerca .fuerte { font-size: 2.4rem; }
+}
+
+/* Mobile 1 */
+@media (max-width: 480px) {
+  .hero { min-height: 360px; }
+  .hero .liviano { font-size: 1.8rem; }
+  .hero .fuerte { font-size: 2.8rem; }
+  .hero__texto p { font-size: .95rem; }
+
+  .card__label { left: 16px; bottom: 16px; }
+  .card__label small { font-size: .72rem; }
+  .card__label strong { font-size: 1.8rem; }
+
+  .opciones { padding: 20px 16px 0; }
+
+  .cerca { min-height: 300px; }
+  .cerca .liviano { font-size: 1.2rem; }
+  .cerca .fuerte { font-size: 2rem; }
+}
+
+/* Mobile 2 */
+@media (max-width: 375px) {
+  .hero { min-height: 320px; }
+  .hero .liviano { font-size: 1.5rem; }
+  .hero .fuerte { font-size: 2.3rem; }
+
+  .card__label strong { font-size: 1.5rem; }
+
+  .cerca .fuerte { font-size: 1.7rem; }
+  .btn { padding: 9px 20px; }
+}

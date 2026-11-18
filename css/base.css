@@ -1,0 +1,398 @@
+/* =====================================================================
+aca estan los estilos del nav y footer que se aplican a todas las paginas
+   ===================================================================== */
+
+
+/* ===== GENERAL ===== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Lato", system-ui, sans-serif;
+  font-size: 1rem;
+  color: #1d1d1b;
+  background-color: #fff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #c9a24b;
+}
+
+a:active {
+  color: #1b2b19;
+}
+
+
+/* ===== HEADER / NAV ===== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #1b2b19;
+  border-bottom: 2px solid #c9a24b;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header .container {
+  position: relative;
+  min-height: 70px;
+}
+
+.logo {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #f7f5ee;
+}
+
+.logo span {
+  font-weight: 700;
+  color: #c9a24b;
+}
+
+.logo:hover {
+  color: #fff;
+}
+
+.logo:active {
+  color: #c9a24b;
+}
+
+.nav {
+  display: flex;
+  gap: 26px;
+}
+
+.nav a {
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: .95rem;
+  text-transform: uppercase;
+  color: #f7f5ee;
+  transition: color .25s, border-color .25s;
+}
+
+.nav a:hover {
+  color: #c9a24b;
+  border-bottom-color: #c9a24b;
+}
+
+.nav a:active {
+  color: #fff;
+}
+
+/* Link de la página actual (se marca con aria-current="page") */
+.nav a[aria-current="page"] {
+  color: #c9a24b;
+  border-bottom-color: #c9a24b;
+}
+
+/* Checkbox oculto que abre y cierra el menú */
+.menu-check {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Botón hamburguesa: oculto en escritorio */
+.menu-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #c9a24b;
+  background-color: transparent;
+  color: #f7f5ee;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color .25s, color .25s;
+}
+
+.menu-btn:hover {
+  background-color: #c9a24b;
+  color: #1b2b19;
+}
+
+/* Ícono: hamburguesa cerrado, X abierto */
+.menu-btn .fa-xmark {
+  display: none;
+}
+
+.menu-check:checked ~ .menu-btn .fa-bars {
+  display: none;
+}
+
+.menu-check:checked ~ .menu-btn .fa-xmark {
+  display: inline-block;
+}
+
+/* Foco con teclado (header y footer) */
+.menu-check:focus-visible ~ .menu-btn,
+.menu-btn:focus-visible,
+.nav a:focus-visible,
+.boton:focus-visible {
+  outline: 3px solid #c9a24b;
+  outline-offset: 3px;
+}
+
+
+/* ===== FOOTER ===== */
+
+.footer {
+  padding: 56px 0 40px;
+  background-color: #1b2b19;
+  border-top: 2px solid #c9a24b;
+  color: #f7f5ee;
+}
+
+.footer .container {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.f-logo {
+  flex: 1 1 160px;
+}
+
+.f-logo .logo {
+  font-size: 1.9rem;
+}
+
+.f-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 160px;
+  gap: 10px;
+}
+
+.f-news {
+  flex: 2 1 320px;
+}
+
+.footer h4 {
+  margin-bottom: 8px;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #c9a24b;
+}
+
+.f-col a {
+  font-size: .95rem;
+  color: #f7f5ee;
+  transition: color .25s, padding-left .25s;
+}
+
+.f-col a:hover {
+  color: #c9a24b;
+  padding-left: 6px;
+}
+
+.f-col a:active {
+  color: #fff;
+}
+
+/* Formulario de suscripción */
+.f-news form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 14px 0 28px;
+}
+
+.f-news input[type="text"],
+.f-news input[type="email"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(201, 162, 75, .5);
+  background-color: transparent;
+  color: #f7f5ee;
+  font-family: "Lato", system-ui, sans-serif;
+  font-size: .95rem;
+  transition: border-color .25s;
+}
+
+.f-news input::placeholder {
+  color: rgba(247, 245, 238, .6);
+}
+
+.f-news input[type="text"]:focus,
+.f-news input[type="email"]:focus {
+  outline: none;
+  border-color: #c9a24b;
+}
+
+.f-news label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .85rem;
+}
+
+.f-news input[type="checkbox"] {
+  accent-color: #c9a24b;
+}
+
+.boton {
+  align-self: flex-start;
+  padding: 10px 26px;
+  border: 1px solid #c9a24b;
+  background-color: #c9a24b;
+  color: #1b2b19;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: .9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color .25s, color .25s;
+}
+
+.boton:hover {
+  background-color: transparent;
+  color: #c9a24b;
+}
+
+.boton:active {
+  background-color: #f7f5ee;
+  border-color: #f7f5ee;
+  color: #1b2b19;
+}
+
+/* Redes sociales */
+.redes {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.redes a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #c9a24b;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #f7f5ee;
+  transition: background-color .25s, color .25s;
+}
+
+.redes a:hover {
+  background-color: #c9a24b;
+  color: #1b2b19;
+}
+
+.redes a:active {
+  background-color: #f7f5ee;
+  color: #1b2b19;
+}
+
+/* Línea de copyright al pie del footer */
+.legal {
+  width: 90%;
+  max-width: 1100px;
+  margin: 36px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(201, 162, 75, .3);
+  font-size: .8rem;
+  color: rgba(247, 245, 238, .75);
+}
+
+
+/* ===== RESPONSIVE (solo header, nav y footer) ===== */
+
+/* Tablet horizontal */
+@media (max-width: 1080px) {
+  .nav { gap: 18px; }
+  .nav a { font-size: .88rem; }
+  .logo { font-size: 1.4rem; }
+}
+
+/* Tablet vertical */
+@media (max-width: 768px) {
+  /* Aparece la hamburguesa y el menú pasa a ser desplegable */
+  .menu-btn {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -5.6%;
+    width: 111.2%;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 5.6% 16px;
+    background-color: #1b2b19;
+    border-bottom: 2px solid #c9a24b;
+  }
+
+  .menu-check:checked ~ .nav {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(201, 162, 75, .35);
+    font-size: 1.2rem;
+  }
+
+  .f-news { flex-basis: 100%; }
+}
+
+/* Mobile 1 */
+@media (max-width: 480px) {
+  body { font-size: .95rem; }
+
+  .footer { padding: 40px 0 32px; }
+  .footer .container { flex-direction: column; gap: 28px; }
+  .boton { align-self: stretch; }
+}
+
+/* Mobile 2 */
+@media (max-width: 375px) {
+  .logo { font-size: 1.25rem; }
+  .menu-btn { width: 40px; height: 40px; }
+}
+
+/* Menos movimiento: sin scroll suave ni transiciones largas */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

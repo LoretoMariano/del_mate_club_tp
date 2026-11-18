@@ -1,0 +1,152 @@
+/* =====================================================================
+   trabaja.html — Trabajá con nosotros (formulario con CV)
+   El header, el nav y el footer están en base.css
+   ===================================================================== */
+
+main {
+  line-height: 1.5;
+}
+
+.sobretitulo {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  letter-spacing: .02em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #c9a24b;
+}
+
+.titulo {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1b2b19;
+}
+
+.titulo::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  margin: 20px auto 0;
+  background-color: #c9a24b;
+}
+
+.trabaja {
+  padding: 60px 0 80px;
+}
+
+.form-wrap {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-wrap .titulo {
+  font-size: 2.6rem;
+}
+
+.intro {
+  margin: 36px 0 44px;
+  font-size: .95rem;
+  text-align: center;
+  color: #6b6b66;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px 30px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo.completo {
+  grid-column: 1 / -1;
+}
+
+.campo label {
+  font-size: .95rem;
+  color: #1b2b19;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo input[type="file"],
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d8d8d3;
+  background-color: #fff;
+  font-family: "Lato", system-ui, sans-serif;
+  font-size: .95rem;
+  color: #1b2b19;
+  transition: border-color .25s;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo select {
+  height: 42px;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 190px;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: #c9a24b;
+  box-shadow: 0 0 0 2px rgba(201, 162, 75, .25);
+}
+
+.boton-enviar {
+  align-self: flex-start;
+  padding: 12px 28px;
+  border: 1px solid #c9a24b;
+  background-color: #c9a24b;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: .95rem;
+  text-transform: uppercase;
+  color: #1b2b19;
+  transition: background-color .25s, color .25s;
+}
+
+.boton-enviar:hover {
+  background-color: transparent;
+  color: #c9a24b;
+}
+
+.boton-enviar:active {
+  background-color: #1b2b19;
+  border-color: #1b2b19;
+  color: #f7f5ee;
+}
+
+@media (max-width: 768px) {
+  .trabaja {
+    padding: 44px 0 60px;
+  }
+
+  .form-wrap .titulo {
+    font-size: 2rem;
+  }
+
+  .formulario {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

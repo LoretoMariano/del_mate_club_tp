@@ -1,0 +1,127 @@
+/* =====================================================================
+   contacto.html — Contacto (formulario + redes)
+   El header, el nav y el footer están en base.css
+   Nota: la lista de redes de esta página se llama .redes-contacto para
+   no chocar con .redes del footer (base.css).
+   ===================================================================== */
+
+:root {
+  --dorado: #c9a24b;
+  --verde-oscuro: #1b2b19;
+  --crema: #f7f5ee;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   Página: Contacto (dos columnas)
+   ========================================================== */
+.contenedor--contacto {
+  margin-top: 36px;
+  padding: 0 20px 40px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+}
+
+.columna_redes {
+  border-left: 1px solid #e3e3e3;   /* línea vertical divisoria */
+  padding-left: 38px;
+}
+
+/* Título con línea que se extiende a la derecha */
+.contenedor--contacto .titulo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.contenedor--contacto .titulo::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.contenedor--contacto .texto {
+  font-size: 13px;
+  line-height: 21px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* Formulario de contacto (solo dentro de .columna_form) */
+.columna_form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.columna_form label {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.columna_form input,
+.columna_form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  background: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.columna_form input { height: 40px; }
+.columna_form textarea { resize: vertical; }
+
+.columna_form input:focus,
+.columna_form textarea:focus {
+  outline: none;
+  border-color: var(--dorado);
+}
+
+.columna_form button {
+  align-self: flex-start;
+  padding: 12px 18px;
+  background-color: var(--dorado);
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.columna_form button:hover { background-color: #b08a63; }
+
+/* Redes sociales de la página (íconos grandes en columna) */
+.redes-contacto {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 8px;
+}
+
+.redes-contacto a {
+  color: #222;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.redes-contacto a:hover { color: var(--dorado); }
